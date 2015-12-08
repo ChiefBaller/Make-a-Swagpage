@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Swags</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.16/processing.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+<script type="text/javascript">
+
+var num=1
+img1 = new Image ()
+img1.src = "http://cdn.arstechnica.net/wp-content/uploads/2013/04/mass_effect_by_virak-d5iscye.jpg"
+img2 = new Image ()
+img2.src = "interference.gif"
+img3 = new Image ()
+img3.src = "message.gif"
+img4 = new Image ()
+img4.src = "nervous.gif"
+
+text1 = "Text for Picture One"
+text2 = "Text for Picture Two"
+text3 = "Text for Picture Three"
+text4 = "Text for Picture Four"
+
+function slideshowUp()
+{
+num=num+1
+if (num==5)
+{num=1}
+document.mypic.src=eval("img"+num+".src")
+document.joe.burns.value=eval("text"+num)
+}
+
+function slideshowBack()
+{
+num=num-1
+if (num==0)
+{num=4}
+document.mypic.src=eval("img"+num+".src")
+document.joe.burns.value=eval("text"+num)
+}
+
+</script>
+
+<!-- The Image and Form Codes are Below -->
+
+<center>
+<IMG SRC="http://cdn.arstechnica.net/wp-content/uploads/2013/04/mass_effect_by_virak-d5iscye.jpg" NAME="mypic" BORDER=0 HEIGHT="100" WIDTH="100">
+<p>
+
+<form name="joe">
+<input type="text" WIDTH="100" NAME="burns" VALUE="Text For Picture One">
+</form>
+
+<A href="JavaScript:slideshowBack()"> Back</A>
+
+<A href="JavaScript:slideshowUp()"> Next</A>

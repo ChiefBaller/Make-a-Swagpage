@@ -1,0 +1,85 @@
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+  <title>Swags</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.16/processing.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+<body>
+  <ul>
+    <li><a class="active" href="file:///C:/Users/Zane/Make-a-Swagpage/KAprojectSWAG.html">KAport</a></li>
+    <li><a href="file:///C:/Users/Zane/Make-a-Swagpage/SWAGshow.html">Slideshow</a></li>
+    <li><a href="file:///C:/Users/Zane/Make-a-Swagpage/SWAGblog.html">Blog</a></li>
+  </ul>
+  <h1>One secret banks don't wan't you to know!</h1>
+  <p>Magic 8-ball tells future!  Ask your question and refresh the page for an answer.</p>
+  <canvas id="swag-drawing" width="400" height="400"></canvas>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    var canvas = document.getElementById("swag-drawing");
+    new Processing(canvas, function(processing){
+      processing.setup = function(){
+        processing.size(400,400);
+        processing.fill(0, 0, 0);
+        processing.ellipse(200, 200, 375, 375);
+        processing.fill(60, 0, 255);
+        processing.triangle(200, 142, 280, 300, 120, 300);
+        processing.fill(255, 255, 255);
+        console.log("swag1");
+        var answer = processing.floor(processing.random(1, 5));
+        if (answer === 3) {
+          processing.text("i implemented", 162, 255);
+          processing.text("ur moms text", 166, 278);
+          console.log("swag2");
+        }
+        else if (answer === 1){
+          processing.fill(255, 0, 0);
+          processing.text("Before you embark\n     on a journey\n   of revenge, dig\n      two graves.", 150, 250);
+        }
+        else if (answer ===4){
+          processing.fill(255, 0, 255);
+          processing.text(" i see great\nballerness in\n  yur future.",167, 236);}
+          else if (answer ===2){
+            processing.fill(0, 255, 9);
+            processing.text("Screw you Harris\n     I do exist", 156, 256);}
+            else if (answer ===5){
+              processing.text("Sounds probable.",152, 264);}
+
+              processing.textSize(20);
+              processing.fill(0, 0, 0);
+              processing.text(answer,14, 23);
+              processing.fill(255, 255, 255);
+              processing.textSize(70);
+              processing.text("8", 180, 116);
+              console.log("swag6");
+            };
+          });
+        });
+        </script>
+      </body>
+      </html>

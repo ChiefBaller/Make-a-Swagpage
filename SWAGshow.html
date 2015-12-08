@@ -1,0 +1,92 @@
+<html>
+<head>
+<style>
+#slideshow{
+  poistion:fixed;
+  margin-left:183px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+<title>N7 day afterparty</title>
+<script type="text/javascript">
+var i = 0, imgsrc = new Array(), preload = new Array();
+imgsrc[0]="KAscreenshots/Garden.png";
+imgsrc[1]="KAscreenshots/House.png";
+imgsrc[2]="KAscreenshots/Invite.png";
+imgsrc[3]="KAscreenshots/Numanalyzer.png";
+imgsrc[4]="KAscreenshots/Quiz.png";
+imgsrc[5]="KAscreenshots/Fishtank.png";
+imgsrc[6]="KAscreenshots/Ball.png";
+imgsrc[7]="KAscreenshots/Bodypillow.png";
+imgsrc[8]="KAscreenshots/bookshelf.png";
+imgsrc[9]="KAscreenshots/Calculator.png";
+
+for (var j=0;j<imgsrc.length;j++)
+{
+preload[j] = new Image;
+preload[j].src = imgsrc[j];
+}
+function mode(param)
+{
+smode=param;
+}
+function startSlideshow()
+{
+if(smode=="play")
+{
+document.getElementById("play").disabled="disabled";
+document.getElementById("pause").disabled="";
+var slideshow = document.getElementById("slideshow");
+slideshow.src = imgsrc[i];
+slideshow.height = 500;
+
+i++;
+setTimeout("startSlideshow()",3000);
+}
+else if(smode=="pause")
+{
+document.getElementById("pause").disabled="disabled";
+document.getElementById("play").disabled="";
+document.getElementById("play").value="Resume";
+}
+if(i==imgsrc.length)
+{
+i=0;
+}
+}
+</script>
+</head>
+<body>
+  <ul>
+    <li><a class="active" href="file:///C:/Users/Zane/Make-a-Swagpage/KAprojectSWAG.html">KAport</a></li>
+    <li><a href="file:///C:/Users/Zane/Make-a-Swagpage/SWAGshow.html">Slideshow</a></li>
+    <li><a href="file:///C:/Users/Zane/Make-a-Swagpage/SWAGblog.html">Blog</a></li>
+  </ul>
+<img id="slideshow" src="KAscreenshots/Garden.png" height="500" />
+<br />
+<input id="play" type="button" value="Play" onclick="mode('play');startSlideshow();" />
+<input id="pause" type="button" value="Pause" disabled="disabled" onclick="mode('pause');startSlideshow();" />
+</body>
+</html>
